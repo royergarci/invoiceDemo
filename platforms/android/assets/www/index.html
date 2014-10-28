@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html class="ui-mobile">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+       <meta name="viewport" content="width=device-width, initial-scale=1"> 
+       <!-- Jquery Mobile -->
+        <link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.4.min.css">
+		<script src="js/jquery-1.10.1.min.js"></script>
+		<script src="js/jquery.mobile-1.4.4.min.js"></script>
+        <!-- Jquery Mobile -->
+        <title>Invoice Demo</title>
+    </head>
+    <body class="ui-mobile-viewport ui-overlay-a">
+     
+            <!-- Start of first page: #one -->
+<div data-role="page" id="inicio">
+	<div data-role="header" style"height:100px;">
+		<h1>Real Invoice</h1>
+		 <a href="#mypanel" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false">Menu</a>
+	</div><!-- /header -->
+	<div data-role="panel" id="mypanel">
+	    <!-- panel content goes here -->
+	</div><!-- /panel -->
+	<div role="main" class="ui-content">
+		<h1>Real Invoice Demo</h1>
+		<h3>Bienvenido. Con esta app podrás capturar tus datos fiscales para ingresarlos de manera mas sencilla y generar tu Factura Electrónica.</h3>
+		<!-- /grid-a -->
+		<div class="ui-grid-a">
+				<div class="ui-grid-a">
+					<div class="ui-block-a">
+						<div class="ui-bar ui-bar-a" style="height: 120px">
+							<a href="#datosFiscales"><img id="imgDf" src="images/iticons/df_it.png" alt="Smiley face" height="100%" width="100%"></a>
+						</div>
+					</div>
+					<div class="ui-block-b">
+						<div class="ui-bar ui-bar-a" style="height: 120px">
+							<a href="#qr"><img id="getQr" src="images/iticons/qr_it.png" alt="Smiley face" height="100%" width="100%"></a>
+						</div>
+					</div>
+				</div>
+				<div class="ui-block-a">
+					<div class="ui-bar ui-bar-a" style="height:120px">
+					<a href="#facturas"><img src="images/iticons/invoice_it.png" alt="Smiley face" height="100%" width="100%"></a>
+					</div>
+				</div>
+		    <div class="ui-block-b">
+		    	<div class="ui-bar ui-bar-a" style="height:120px">
+		    		<a href="#popup"><img src="images/iticons/instrucciones_it.png" alt="Smiley face" height="100%" width="100%"></a>
+		    	</div>
+		    </div>
+		</div><!-- /grid-a -->
+	</div><!-- /content -->
+
+	<div data-role="footer" data-theme="a">
+		<h4>IT Reals System Consulting 2014</h4>
+	</div><!-- /footer -->
+</div><!-- /page one -->
+
+<!-- Start of second page: #two -->
+<div data-role="page" id="datosFiscales" data-theme="a">
+
+	<div data-role="header">
+		<h1>Datos Fiscales</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<h2>Captura de Datos Fiscales</h2>
+		<p>Por favor introduzca sus datos.</p>
+		
+	<form id="formDf">
+    <ul data-role="listview" data-inset="true">
+        <li class="ui-field-contain">
+           <label for="razonSocial">Razón Social</label>
+			<input type="text" name="razonSocial" id="razonSocial" value="" onchange="strToUpperDs(this)">
+        </li>
+        <li class="ui-field-contain">
+           <label for="text-basic">RFC</label>
+			<input type="text" name="rfc" id="rfc" value="" onchange="strToUpperDs(this)">
+        </li>
+        <li class="ui-field-contain">
+        	<label for="pais">Correo Electrónico</label>
+			<input type="text" name="email" id="email" value="">
+        </li>
+         <li class="ui-field-contain">
+          	<label for="text-basic">Calle</label>
+			<input type="text" name="calle" id="calle" value="" onchange="strToUpperDs(this)">
+        </li>
+        <li class="ui-field-contain">
+          	<label for="text-basic">Num Exterior</label>
+			<input type="text" name="numExt" id="numExt" value="" onchange="strToUpperDs(this)">
+        </li>
+        <li class="ui-field-contain">
+          	<label for="text-basic">Num Interior</label>
+			<input type="text" name="numInt" id="numInt" value="" onchange="strToUpperDs(this)">
+        </li>
+        <li class="ui-field-contain">
+          	<label for="text-basic">Num Interior</label>
+			<input type="text" name="numInt" id="numInt" value="" onchange="strToUpperDs(this)">
+        </li>
+        <li class="ui-field-contain">
+        	 <label for="text-basic">Colonia</label>
+			<input type="text" name="colonia" id="colonia" value="" onchange="strToUpperDs(this)">
+        </li>
+         <li class="ui-field-contain">
+        	<label for="text-basic">Delegación o Municipio</label>
+			<input type="text" name="delegacion" id="delegacion" value="" onchange="strToUpperDs(this)">
+        </li>
+        <li class="ui-field-contain">
+        	<label for="text-basic">CP</label>
+			<input type="text" name="cp" id="cp" value="">
+        </li>
+        <li class="ui-field-contain">
+        	<label for="text-basic">Ciudad</label>
+			<input type="text" name="ciudad" id="ciudad" value="" onchange="strToUpperDs(this)">
+        </li>
+       <li class="ui-field-contain">
+            <label for="estado" class="select">Estado</label>
+            <select name="estado" id="estado">
+                <option value="AGUASCALIENTES">AGUASCALIENTES</option>
+				<option value="BAJA CALIFORNIA NORTE">BAJA CALIFORNIA NORTE</option>
+				<option value="BAJA CALIFORNIA SUR">BAJA CALIFORNIA SUR</option>
+				<option value="CAMPECHE">CAMPECHE</option>
+				<option value="CHIAPAS">CHIAPAS</option>
+				<option value="COAHUILA">COAHUILA</option>
+				<option value="COLIMA">COLIMA</option>
+				<option value="DF">DF</option>
+				<option value="DURANGO">DURANGO</option>
+				<option value="MEXICO">MEXICO</option>
+				<option value="GUANAJUATO">GUANAJUATO</option>
+				<option value="GUERRERO">GUERRERO</option>
+				<option value="HIDALGO">HIDALGO</option>
+				<option value="JALISCO">JALISCO</option>
+				<option value="MICHOACAN">MICHOACAN</option>
+				<option value="MORELOS">MORELOS</option>
+				<option value="NAYARIT">NAYARIT</option>
+				<option value="NUEVO LEON">NUEVO LEON</option>
+				<option value="OAXACA">OAXACA</option>
+				<option value="PUEBLA">PUEBLA</option>
+				<option value="QUERETARO">QUERETARO</option>
+				<option value="QUINTANA ROO">QUINTANA ROO</option>
+				<option value="SAN LUIS POTOSI">SAN LUIS POTOSI</option>
+				<option value="SINALOA">SINALOA</option>
+				<option value="SONORA">SONORA</option>
+				<option value="TABASCO">TABASCO</option>
+				<option value="TAMAULIPAS">TAMAULIPAS</option>
+				<option value="TLAXCALA">TLAXCALA</option>
+				<option value="VERACRUZ">VERACRUZ</option>
+				<option value="YUCATAN">YUCATAN</option>
+				<option value="ZACATECAS">ZACATECAS</option>
+            </select>
+        </li>
+        <li class="ui-field-contain">
+        	<label for="pais">Pais</label>
+			<input type="text" name="pais" id="pais" value="MEXICO">
+        </li>
+        <li class="ui-body ui-body-b">
+            <fieldset class="ui-grid-a">
+           
+                    <div class="ui-block-a"><button class="ui-btn ui-corner-all ui-btn-a" id="btnCancelar">Cancelar</button></div>
+                    <div class="ui-block-b"><button class="ui-btn ui-corner-all ui-btn-a" id="btnGuardarDf">Guardar</button></div>
+            </fieldset>
+        </li>
+    </ul>
+</form>
+     <button id="startScan">Start Scan</button>
+    <div id="results"></div>
+		<p><a href="#inicio" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b">Regresar</a></p>
+	<button id="register">Registar</button>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>IT Reals System Consulting 2014</h4>
+	</div><!-- /footer -->
+</div><!-- /page two -->
+
+
+<!-- tercera pagina: #qr -->
+<div data-role="page" id="qr" data-theme="a">
+
+	<div data-role="header">
+		<h1>QR</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<h2>QR De datos Fiscales</h2>
+		
+		
+		
+		<div id="qrImagen"></div>
+		<p><a href="#inicio" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b">Regresar</a></p>
+        
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>IT Reals System Consulting 2014</h4>
+	</div><!-- /footer -->
+</div><!-- /page two -->
+
+<!-- Pagina de Facturas enviadas -->
+<div data-role="page" id="facturas">
+
+	<div data-role="header" data-theme="b">
+		<h1>Facturas</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<h2>Facturas</h2>
+		<ul data-role="listview" data-count-theme="b" data-inset="true">
+		    <li><a href="#facturasMes">Octubre 2014 <span class="ui-li-count">5</span></a></li>
+		    <li><a href="#">Septiembre 2014 <span class="ui-li-count">0</span></a></li>
+		    <li><a href="#">Agosto 2014 <span class="ui-li-count">4</span></a></li>
+		    <li><a href="#">Julio 2014 <span class="ui-li-count">2</span></a></li>
+		    <li><a href="#">Junio 2014 <span class="ui-li-count">1</span></a></li>
+		</ul>
+		<p><a href="#inicio" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Regresar</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>IT Reals System 2014</h4>
+	</div><!-- /footer -->
+</div><!-- /page facturas -->
+
+<!-- Pagina de Facturas Mes Octubre -->
+<div data-role="page" id="facturasMes">
+
+	<div data-role="header" data-theme="b">
+		<h1>Octubre 2014</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<h2>Facturas</h2>
+		<ul data-role="listview" data-inset="true">
+		    <li data-role="list-divider">8 Octubre 2014 <span class="ui-li-count">3</span></li>
+		    <li><a href="index.php">
+		    <h2>Cablevision SA DE CV</h2>
+		    <p><strong>UUID 2329392-123DFDF-DFSDFSD-4343</strong></p>
+		        <p class="ui-li-aside"><strong>6:24</strong>PM</p>
+		    </a></li>
+		     <li><a href="index.php">
+		    <h2>RADIO MOVIL DIPSA SA DE CV</h2>
+		     <p><strong>UUID 2329392-123DFDF-DFSDFSD-4343</strong></p>
+		        <p class="ui-li-aside"><strong>6:24</strong>PM</p>
+		    </a></li>
+		    <li><a href="index.php">
+		    <h2>SERVICIOS TECNICOS SA DE CV</h2>
+		    <p><strong>UUID 2329392-123DFDF-DFSDFSD-4343</strong></p>
+		        <p class="ui-li-aside"><strong>6:24</strong>PM</p>
+		    </a></li>
+		    <li data-role="list-divider">14 Octubre 2014 <span class="ui-li-count">2</span></li>
+		    <li><a href="index.php">
+		    <h2>IT REALS SYSTEM SA DE CV</h2>
+		   <p><strong>UUID 2329392-123DFDF-DFSDFSD-4343</strong></p>
+		        <p class="ui-li-aside"><strong>6:24</strong>PM</p>
+		    </a></li>
+		    <li><a href="index.php">
+		    <h2>JAIME GONZALES GARCIA</h2>
+		   	<p><strong>UUID 2329392-123DFDF-DFSDFSD-4343</strong></p>
+		        <p class="ui-li-aside"><strong>6:24</strong>PM</p>
+		    </a></li>
+		</ul>
+		<p><a href="#inicio" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Regresar</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>IT Reals System 2014</h4>
+	</div><!-- /footer -->
+</div><!-- /page facturas -->
+
+
+<!-- Start of third page: #popup -->
+<div data-role="page" id="popup">
+
+	<div data-role="header" data-theme="b">
+		<h1>Dialog</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<h2>Popup</h2>
+		<p>I have an id of "popup" on my page container and only look like a dialog because the link to me had a <code>data-rel="dialog"</code> attribute which gives me this inset look and a <code>data-transition="pop"</code> attribute to change the transition to pop. Without this, I'd be styled as a normal page.</p>
+		<p><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to page "one"</a></p>
+		<button id="startScan">Start Scan</button>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page popup -->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/action.js"></script>
+        <script type="text/javascript" src="cordova_plugins.js"></script>
+         <script type="text/javascript" src="js/scan.js"></script>
+          <script type="text/javascript" src="js/pushGCM.js"></script>
+         <script type="text/javascript" src="js/utilities.js"></script> 
+    </body>
+</html>
